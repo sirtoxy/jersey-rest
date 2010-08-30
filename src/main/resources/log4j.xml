@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="ALL" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss}  %r  %-5p  %c.%M()%n%m%n%n" />
+		</layout>
+
+	</appender>
+
+	<category name="org.hibernate">
+		<priority value="info" />
+	</category>
+
+	<category name="net.sf.ehcache">
+		<priority value="info" />
+	</category>
+
+	<category name="org.springframework">
+		<priority value="warn" />
+	</category>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="ConsoleAppender" />
+	</root>
+</log4j:configuration>
